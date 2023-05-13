@@ -1,1 +1,2 @@
 export TOKEN=b0tT0k3N
+export BACKEND_URL=http://localhost:port/api/endpoint
