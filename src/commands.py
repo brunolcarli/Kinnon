@@ -5,6 +5,7 @@ from src.questions import Scopes, random_question_id
 from src.queries import Query, Mutation
 from src.util import translate_sentiment
 from src.errors import APIResponseErrors
+from kinnon.settings import __version__
 
 
 client = commands.Bot(
@@ -15,12 +16,12 @@ client = commands.Bot(
  
 @client.event
 async def on_ready():
-    print("READY!")
+    print(f'Ready and running V: {__version__}')
 
 
-@client.command()
-async def ping(ctx):
-    await ctx.send('pong')
+@client.command(aliases=['v'])
+async def version(ctx):
+    await ctx.send(f'Kinnon Bot versão: {__version__}')
 
 
 @client.command(aliases=['s1'])
